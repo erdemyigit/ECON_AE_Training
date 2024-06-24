@@ -36,6 +36,15 @@ def filter_for_flat_distribution(dataset, index_i):
 
     Returns:
     - tf.data.Dataset: A new dataset filtered to achieve a flat distribution across non-zero bins for index_i.
+    
+    Q: Why do we need to flatten?
+    
+    A: Balanced Training Data:
+    - Machine learning models can become biased if certain values or ranges are overrepresented in the training data. For example, if a dataset has many more samples of one class than another, a model might learn to favor the more frequent class.
+    - By flattening the distribution, we ensure that the model sees an equal number of samples from all parts of the distribution, which helps it learn a more generalized representation.
+
+    A: Improved Generalization:
+    - A model trained on a dataset with a flat distribution is more likely to generalize well to new, unseen data. This is because it has been exposed to a diverse range of examples during training.
     """
     # Extract the values at index_i from the dataset
     values_to_balance = np.array(list(dataset.map(lambda features, labels: labels[index_i]).as_numpy_iterator()))
