@@ -23,3 +23,7 @@ python train_CAE_simon_data.py --mname AE  --batchsize 4000 --lr 1e-4 --nepochs 
 To process the model: 
 
 python dev_preCMSSW.py --mname AE --mpath Tele_CAE_biased_90
+
+## Complete Training Pipeline
+
+Link: https://docs.google.com/document/d/1d9-QMJeYMhQXRHYzwejuHet8lafU3uKOSptVIgHyQ44/edit#heading=h.497wnsxfm8f7
